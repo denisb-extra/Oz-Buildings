@@ -517,6 +517,7 @@ section.about {
 	background: #EEF1F3;
 	padding-bottom: 0;
 	overflow: visible;
+	color: #002436;
 	&.inner {
 		background: #fff;
 		padding-bottom: 100px;
@@ -532,52 +533,71 @@ section.about {
 			&:nth-child(2) {
 			}
 		}
+	}
 
-		color: #002436;
+	.title {
+		@include f-b;
+		font-size: 40px;
+	}
+	.subtitle {
+		@include f-b;
+		font-size: 24px;
+	}
 
-		.title {
-			@include f-b;
-			font-size: 40px;
+	.content {
+		@include f-r;
+		font-size: 18px;
+		&.bottom {
+			margin-top: 55px;
 		}
-		.subtitle {
-			@include f-b;
-			font-size: 24px;
+		p, ul {
+			margin-top: 20px;
 		}
-		.content {
-			@include f-r;
-			font-size: 18px;
-			p {
-				margin-top: 25px;
+		.btn {
+			margin-top: 35px;
+		}
+		ul {
+			column-count: 2;
+		}
+		li {
+			margin-top: 10px;
+			&:first-child {
+				margin-top: 0;
 			}
-			.btn {
-				margin-top: 35px;
-			}
+			padding-right: 25px;
+			background-image: url("../images/icons/check.png");
+			background-repeat: no-repeat;
+			background-position: right center;
 		}
+	}
 
-		.line {
-			@include f-b;
-			font-size: 80px;
-			margin-top: 45px;
-			span {
-				color: #FFAA00;
-			}
+	.social-cont {
+		margin-top: 25px;
+	}
+
+	.line {
+		@include f-b;
+		font-size: 80px;
+		margin-top: 45px;
+		span {
+			color: #FFAA00;
 		}
+	}
 
-		.slider {
-			.owl-nav {
-				position: absolute;
-				left: 50%;
-				right: auto;
-				top: auto;
-				bottom: 0;
-				transform: translate(-50%, 50%);
+	.slider {
+		.owl-nav {
+			position: absolute;
+			left: 50%;
+			right: auto;
+			top: auto;
+			bottom: 0;
+			transform: translate(-50%, 50%);
+			
+			pointer-events: none;
+			div {
+				margin: 0 15px;
+				float: none;
 				
-				pointer-events: none;
-				div {
-					margin: 0 15px;
-					float: none;
-					
-				}
 			}
 		}
 	}
@@ -623,12 +643,11 @@ section.about {
 
 
 	@media only screen and (max-width : $lw) {
-		.parts {
-			.line {
-				font-size: 65px;
-				margin-top: 35px;
-			}
+		.line {
+			font-size: 65px;
+			margin-top: 35px;
 		}
+		
 		.boxes {
 			margin-top: -50px;
 		}
@@ -636,7 +655,6 @@ section.about {
 
 	@media only screen and (max-width : $tw) {
 		padding: 75px 0;
-	
 	}
 
 	@media only screen and (max-width : $mw) {
@@ -655,25 +673,24 @@ section.about {
 					margin-top: 25px;
 				}
 			}
+		}
 
-			.content {
-				font-size: 16px;
-				p {
-					margin-top: 20px;
-					strong {
-						@include f-m;
-						font-size: 28px;
-					}
-				}
-				.btn {
-					margin-top: 35px;
-				}
+		.content {
+			font-size: 16px;
+			p {
+				margin-top: 20px;
 			}
+			ul {
+				column-count: 1;
+			}
+			.btn {
+				margin-top: 35px;
+			}
+		}
 
-			.line {
-				font-size: 35px;
-				margin-top: 25px;
-			}
+		.line {
+			font-size: 35px;
+			margin-top: 25px;
 		}
 
 		.boxes {
@@ -707,6 +724,20 @@ section.products {
 	background-size: 100% auto;
 	background-position: top left;
 	text-align: center;
+
+	&.inner {
+		padding-top: 85px;
+		background: #fff;
+	}
+
+	&.more {
+		background-color: #EEF1F3;
+		background-image: url("../images/inner/bg-info.jpg");
+		background-repeat: no-repeat;
+		background-position: left top;
+		padding-top: 200px;
+	}
+
 	.section-inner {
 		max-width: 1558px;
 	}
@@ -718,6 +749,18 @@ section.products {
 	.slider-wrapper {
 		padding: 0 85px;
 		margin-top: 45px;
+	}
+
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -20px;
+		margin-top: 35px;
+		.item {
+			width: 33.333%;
+			padding: 20px;
+			
+		}
 	}
 	.slider {
 		.owl-nav {
@@ -736,7 +779,15 @@ section.products {
 			cursor: pointer;
 			display: block;
 			text-align: right;
-			&:before {
+			.inner {
+				position: relative;
+				font-size: 0;
+				overflow: hidden;
+				img {
+					width: 100%;
+				}
+			}
+			.inner:before {
 				content: "";
 				display: block;
 				position: absolute;
@@ -791,7 +842,7 @@ section.products {
 			}
 
 			&:hover {
-				&:before {
+				.inner:before {
 					opacity: 0.46;
 				}
 				.caption {
@@ -808,6 +859,12 @@ section.products {
 
 	@media only screen and (max-width : $lw) {
 		padding-top: 180px;
+		&.inner {
+			padding-top: 85px;
+		}
+		&.more {
+			padding-top: 200px;
+		}
 		.slider {
 			.item {
 				.caption {
@@ -825,15 +882,58 @@ section.products {
 
 	@media only screen and (max-width : $tw) {
 		padding-top: 95px;
+		&.inner {
+			padding-top: 55px;
+		}
+		&.more {
+			padding-top: 150px;
+		}
 		.slider-wrapper {
 			padding: 0 65px;
 		}
+
+		.boxes {
+			margin: 0 -10px;
+			margin-top: 25px;
+			.item {
+				padding: 10px;
+				width: 50%;
+			}
+		}
 	}
-	@media only screen and (max-width : $tw) {
+	@media only screen and (max-width : $mw) {
 		padding-top: 35px;
+		&.inner {
+			padding-top: 35px;
+		}
+		&.more {
+			padding-top: 220px;
+		}
 		.slider-wrapper {
 			padding: 0 50px;
 			margin-top: 25px;
+		}
+
+		.boxes {
+			margin: 0 -10px;
+			margin-top: 25px;
+			.item {
+				.caption {
+					min-width: auto;
+					bottom: 8px;
+					padding: 8px;
+    				padding-right: 15px;
+    				&:before {
+    					max-width: 5px;
+    				}
+					.title {
+						font-size: 18px;
+					}
+					.text {
+						display: none;
+					}
+				}
+			}
 		}
 
 		.btn {
@@ -847,7 +947,7 @@ section.products {
 section.safety {
 	background-image: url("../images/index/bg-safety.jpg");
 	background-repeat: no-repeat;
-	background-size: auto 100% ;
+	background-size: 100% auto;
 	background-position: top left;
 
 	.content {
@@ -930,6 +1030,9 @@ section.safety {
 			}
 		}
 	}
+	@media only screen and (max-width : 1600px) {
+		background-size: auto 100% ;
+	}
 	@media only screen and (max-width : $tw) {
 		.content {
 			.title {
@@ -949,7 +1052,7 @@ section.safety {
 		}
 	}
 
-	@media only screen and (max-width : $tw) {
+	@media only screen and (max-width : $mw) {
 		.content {
 			.title {
 				font-size: 30px;
@@ -1149,6 +1252,28 @@ section.testimonials {
 }
 /* --------------------- /Section testimonials ---------------------- */
 
+
+.single-form {
+	background: #00324B;
+	padding: 35px;
+	filter: drop-shadow(0px 13px 17px rgba(0,0,0,0.5));
+	margin-top: 95px;
+	margin-bottom: -200px;
+	position: relative;
+	z-index: 3;
+	.form-title {
+		@include f-b;
+		font-size: 24px;
+		color: #fff;
+	}
+	.wpcf7 {
+		margin-top: 25px;
+	}
+
+	@media only screen and (max-width : $mw) {
+		margin-top: 45px;
+	}
+}
 .wpcf7 {
 	position: relative;
     form {
@@ -1232,7 +1357,7 @@ section.testimonials {
     		flex-direction: column;
     		.wpcf7-form-control-wrap {
     			width: 100%;
-    			padding: 3px 0px;
+    			padding: 5px 0px;
     		}
     		input, textarea, select {
 			 	padding: 15px 15px;
@@ -1240,7 +1365,7 @@ section.testimonials {
 			}
 			 input[type="submit"] {
 			 	width: 100%;
-			 	margin-top: 6px;
+			 	margin-top: 9px;
 			 }
     	}
     }
@@ -1374,34 +1499,7 @@ footer {
 			}
 		}
 
-		.social-cont {
-			white-space: nowrap;
-			a,p {
-				display: inline-block;
-				vertical-align: middle;
-			}
-			a {
-				margin: 0 15px;
-				@include f-r;
-				font-size: 30px;
-				color: #363636;
-				transition: 0.5s;
 		
-				&:hover {
-					color: #FFAA00;
-				}
-			}
-
-			p {
-				@include f-b;
-				font-size: 18px;
-				line-height: 18px;
-				color: #000000;
-				background: #FFAA00;
-				padding: 10px;
-				margin-left: 25px;
-			}
-		}
 	}
 
 	.footer-bottom {
@@ -1553,6 +1651,35 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+.social-cont {
+	white-space: nowrap;
+	a,p {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	a {
+		margin: 0 15px;
+		@include f-r;
+		font-size: 30px;
+		color: #363636;
+		transition: 0.5s;
+
+		&:hover {
+			color: #FFAA00;
+		}
+	}
+
+	p {
+		@include f-b;
+		font-size: 18px;
+		line-height: 18px;
+		color: #000000;
+		background: #FFAA00;
+		padding: 10px;
+		margin-left: 25px;
 	}
 }
 /* --------------------- /footer ---------------------- */
