@@ -1,0 +1,303 @@
+/* ---------------------- Section top-inner ---------------------- */
+section.top-inner {
+	background-color: #edf1f4;
+	padding-top: 90px;
+	padding-bottom: 45px;
+	position: relative;
+	background-image: linear-gradient(to right, #F0F3F6 , #D0DBE1);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	.title {
+		@include f-l;
+		font-size: 60px;
+		line-height: 60px;
+		color: #002436;
+		margin: 0;
+		text-align: right;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.breadcrumbs {
+		text-align: right;
+		margin-top: 30px;
+		display: inline-block;
+		vertical-align: middle;
+		float: left;
+	}
+	.line {
+		@include f-r;
+		font-size: 18px;
+		color: #002436;
+		a {
+			@include f-r;
+			font-size: 18px;
+			color: #002436;
+			margin: 0 5px;
+		}
+		.breadcrumb_last {
+			@include f-b;
+			font-size: 18px;
+			color: #002436;
+			margin: 0 5px;
+		}
+	}
+
+	@media only screen and (max-width : $lw) {
+		padding-top: 50px;
+		padding-bottom: 40px;
+		.title {
+			font-size: 40px;
+		}
+
+	}
+	@media only screen and (max-width : $mw) {
+		padding-bottom: 30px;
+		.title {
+			font-size: 40px;
+			line-height: 30px;
+		}
+		.breadcrumbs {
+			float: none;
+			display: block;
+			margin-top: 15px;
+		}
+	}
+}
+/* --------------------- /Section top-inner ---------------------- */
+
+/* ---------------------- Section team ---------------------- */
+section.team {
+	.section-title, .section-subtitle {
+		text-align: right;
+	}
+
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 0;
+		margin: -15px;
+		margin-top: 25px;
+		.box {
+			width: 25%;
+			margin: 0;
+			padding: 15px;
+			display: block;
+			position: relative;
+			overflow: hidden;
+			.inner {
+				overflow: hidden;
+				position: relative;
+			}
+			.image {
+				position: relative;
+				
+				overflow: hidden;
+				width: 100%;
+				img {
+					width: 100%;
+				}
+			}
+	
+			.text {
+				padding: 10px;
+				color: #002436;
+				text-align: center;
+				.name {
+					@include f-b;
+					font-size: 22px;
+				}
+				.position {
+					@include f-r;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+/* --------------------- /Section team ---------------------- */
+
+/* ---------------------- Section info ---------------------- */
+section.info {
+	padding: 75px 0;
+	background-color: #EEF1F3;
+	background-image: url("../images/inner/bg-info.jpg");
+	background-repeat: no-repeat;
+	background-position: left top;
+	.info {
+
+		display: flex;
+		align-items: center;
+
+		.logo-mobile {
+			display: none;
+			margin-top: 20px;
+		}
+		.text {
+			color: #002436;
+			margin-right: 45px;
+			.title {
+				@include f-b;
+				font-size: 40px;
+				line-height: 40px;
+			}
+			.subtitle {
+				@include f-b;
+				font-size: 24px;
+			}
+			.content {
+				@include f-r;
+				font-size: 18px;
+				p {
+					margin-top: 20px;
+				}
+				.btn { 
+					margin-top: 35px;
+				}
+			}
+		}
+	}
+
+
+
+	@media only screen and (max-width : $lw) {
+
+		.info {
+			padding: 40px;
+			margin-top: 75px;
+			.text {
+				margin-left: 25px;
+				.title {
+					font-size: 30px;
+					line-height: 30px;
+				}
+				.subtitle {
+					font-size: 20px;
+				}
+				.content {
+					@include f-r;
+					font-size: 16px;
+					p {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+
+		.info {
+			margin: 0 -50px;
+			margin-top: 35px;
+			padding: 20px;
+			.logo {
+				display: none;
+			}
+			.logo-mobile {
+				display: block;
+			}
+		}
+	}
+}
+/* --------------------- /Section info ---------------------- */
+
+/* ---------------------- Section diplomas ---------------------- */
+section.diplomas {
+	padding: 0;
+	.parts {
+		display: flex;
+		margin: 0 -20px;
+		.part {
+			width: 50%;
+			padding: 85px;
+			background: #F3F4F7;
+			text-align: center;
+			&:nth-child(1) {
+				
+				background: url("../images/inner/diplomas/bg-diplomas.jpg") no-repeat;
+				background-size: 100% auto ;
+			}
+			&:nth-child(2) {
+				.title {
+					color: #002436;
+				}
+				background: #fff;
+
+				.boxes {
+					.box {
+						.inner {
+							img {
+								width: 90%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.title {
+			@include f-b;
+			font-size: 40px;
+			color: #fff;
+			text-align: right;
+		}
+		
+		.btn {
+			margin-top: 35px;
+		}
+		.boxes {
+			display: flex;
+			flex-wrap: wrap;
+			font-size: 0;
+			margin: -10px;
+			margin-top: 40px;
+			.box {
+				width: 33.333%;
+				margin: 0;
+				padding: 10px;
+				display: block;
+				position: relative;
+				overflow: hidden;
+				.inner {
+					overflow: hidden;
+					position: relative;
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+		
+	}
+
+	@media only screen and (max-width : $tw) {
+		.parts {
+			.title {
+				font-size: 70px;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.parts {
+			flex-wrap: wrap;
+			.title {
+				font-size: 55px;
+			}
+			.part {
+				width: 100%;
+
+				&:nth-child(1) {
+					padding: 35px;
+				}
+				&:nth-child(2) {
+					padding: 35px;
+				}
+				.boxes {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+/* --------------------- /Section diplomas ---------------------- */

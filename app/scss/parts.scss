@@ -1,0 +1,188 @@
+.btn {
+	@include f-r;
+	font-size: 18px;
+	color: #090B24;
+	display: inline-block;
+	padding: 10px 35px;
+	border-radius: 200px;
+	background-image: linear-gradient(to top, #FFAA00 50%, transparent 50%);
+	background-position: top;
+	background-size: 100% 200%;
+	min-width: 200px;
+	cursor: pointer;
+	transition: background-position 0.25s ease-in-out;
+	text-align: center;
+	border: 2px solid #FFAA00;
+	&:hover {
+		background-position: bottom;
+	}
+
+	@media only screen and (max-width : $tw) {
+		font-size: 16px;
+		padding: 8px 30px;
+		min-width: 150px;
+	}
+
+	@media only screen and (max-width : $mw) {
+		font-size: 16px;
+		padding: 8px 20px;
+		min-width: 100px;
+	}
+}
+
+.section-title {
+	@include f-b;
+	font-size: 40px;
+	color: #002436;
+	text-align: center;
+
+	@media only screen and (max-width : $tw) {
+		font-size: 30px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 25px;
+	}
+}
+.section-subtitle {
+	@include f-r;
+	font-size: 18px;
+	color: #002436;
+	text-align: center;
+	margin-top: 10px;
+	@media only screen and (max-width : $tw) {
+		font-size: 18px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 16px;
+	}
+}
+
+
+.play-button {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: 100px;
+	width: 100px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 100%;
+	z-index: 3;
+	cursor: pointer;
+
+	i {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		color: #283786;
+		font-size: 35px;
+		transition: 0.5s;
+	}
+	&:hover {
+		i {
+			color: #CF212A;
+		}
+	}
+}
+
+
+.slider.owl-theme {
+	.owl-dots {
+		position: absolute;
+    	bottom: -75px;
+    	width: 100%;
+    	left: 0;
+		.owl-dot {
+			span {
+				background: transparent;
+				border: 2px solid #34454E;
+				transition: 0.5s;
+			}
+
+			&.active {
+				span {
+					background: #34454E;
+				}
+			}
+			&:hover {
+				span {
+					background: #34454E;
+				}
+			}
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: -85px;
+		right: -85px;
+		pointer-events: none;
+		div {
+			pointer-events: auto;
+			font-size: 35px;
+			width: 70px;
+			height: 70px;
+			background: #fff;
+			border-radius: 100%;
+
+			pointer-events: auto;
+			display: inline-block;
+			text-align: center;
+			position: relative;
+			i {
+				transition: 0.5s;
+				color: #FFAA00;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+			&:hover {
+				i {
+					color: #002436;
+				}
+			}
+		}
+		.owl-prev {
+			float: right;
+		}
+
+		.owl-next {
+			float: left;
+		}
+	}
+	@media only screen and (max-width : $tw) {
+		.owl-nav {
+			left: -65px;
+			right: -65px;
+	
+			div {
+				pointer-events: auto;
+				font-size: 35px;
+				width: 55px;
+				height: 55px;
+			}
+		}
+	}
+	@media only screen and (max-width : $mw) {
+		.owl-dots {
+			margin-top: 35px;
+		}
+
+		.owl-nav {
+			left: -55px;
+			right: -55px;
+	
+			div {
+				pointer-events: auto;
+				font-size: 35px;
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+}
